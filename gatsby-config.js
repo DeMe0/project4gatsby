@@ -4,10 +4,14 @@ module.exports = {
     title: "project4gatsby",
   },
   plugins: [
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "pKa2NaFQpgn-vznNjywlCZFQqeYiPsgqmYWfD7PYguI",
+        accessToken: "PqDEx_HJYhQ_k2WqHRF6deEUaZ9xOIihiLZJZhkEhPE",
         spaceId: "lwq18859yao6",
       },
     },
