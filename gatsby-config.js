@@ -4,10 +4,11 @@ module.exports = {
     title: "project4gatsby",
   },
   plugins: [
-    'gatsby-plugin-sass',
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-source-contentful",
       options: {

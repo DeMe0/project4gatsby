@@ -1,6 +1,6 @@
-import * as React from "react"
-import { Helmet } from 'react-helmet';
-import App from '../components/App';
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import App from "../components/App";
 
 // styles
 
@@ -10,8 +10,8 @@ const IndexPage = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{'Father & Son Sewer'}</title>
-        <html lang={'en'}/>
+        <title>{"Father & Son Sewer"}</title>
+        <html lang={"en"} />
         <meta name="description" />
       </Helmet>
       <App />
@@ -19,4 +19,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage
+export default IndexPage;
