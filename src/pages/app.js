@@ -9,6 +9,7 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 
 import { PortfolioProvider } from "../context/context";
+import { render } from "react-dom";
 
 export default function App(props) {
   console.log("props =", props);
@@ -16,7 +17,7 @@ export default function App(props) {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(node);
+        console.log("node =", node);
         return <></>;
       },
     },
@@ -24,6 +25,18 @@ export default function App(props) {
 
   const service = props.data.allContentfulServices.edges[0].node.content;
   const services = props.data.allContentfulServices.edges;
+
+  const image =
+    props.data.allContentfulCarouselImages.edges[0].node.image[0].description;
+  const images = props.data.allContentfulCarouselImages.edges;
+
+  // const imageOutput = [];
+  // images.forEach((image) => {
+  //   const imageData = render(image.node.image[0].description);
+  //   imageData.forEach((element) => {
+  //     imageOutput.push(element);
+  //   });
+  // });
 
   const output = [];
   services.forEach((service) => {
@@ -36,7 +49,7 @@ export default function App(props) {
   return (
     <PortfolioProvider>
       <LogoHeader />
-      <CarouselContainer />
+      <CarouselContainer {...props} />
       <About output={output} />
       <Contact />
       <Footer />
@@ -56,6 +69,15 @@ export const query = graphql`
               contentful_id
               title
             }
+          }
+        }
+      }
+    }
+    allContentfulCarouselImages {
+      edges {
+        node {
+          image {
+            description
           }
         }
       }

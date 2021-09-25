@@ -1,12 +1,114 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-scroll";
-import { Carousel } from "react-bootstrap";
+import { graphql } from "gatsby";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import Img from "gatsby-image";
+import { Carousel } from "bootstrap";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { renderRichText, renderNode } from "gatsby-source-contentful/rich-text";
+import "../../styles/carousel.sass";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
-const CarouselContainer = () => {
+const CarouselContainer = (props) => {
+  console.log("props =", props);
+
+  const [width, setWidth] = useState(window.screen.width);
+
+  useEffect(() => {
+    setWidth(window.screen.width);
+  }, [window.screen.width]);
+
+  useEffect(() => {
+    console.log(width);
+  }, [width]);
+
+  const options = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        console.log(node);
+        return <></>;
+      },
+    },
+  };
+
+  // const image = props.data.allContentfulAsset.edges[0].node.title;
+  // const images = props.data.allContentfulAsset.edges;
+
+  // const output = [];
+  // images.forEach((image) => {
+  //   const imageData = renderNode(image.node.content, options);
+  //   imageData.forEach((element) => {
+  //     output.push(element);
+  //   });
+  // });
   return (
-    <div className="carouselDiv">
-      <h1>Carousel Component</h1>
+    <div className="carouselContainer">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src={
+                props.data.allContentfulCarouselImages.edges[0].node.image[0]
+                  .description
+              }
+              alt="First slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src={
+                props.data.allContentfulCarouselImages.edges[0].node.image[1]
+                  .description
+              }
+              alt="Second slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src={
+                props.data.allContentfulCarouselImages.edges[0].node.image[2]
+                  .description
+              }
+              alt="Third slide"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
   );
 };
