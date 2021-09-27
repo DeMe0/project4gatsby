@@ -13,15 +13,15 @@ import "../../styles/carousel.sass";
 const CarouselContainer = (props) => {
   console.log("props =", props);
 
-  const [width, setWidth] = useState(window.screen.width);
+  // const [width, setWidth] = useState(window.screen.width);
 
-  useEffect(() => {
-    setWidth(window.screen.width);
-  }, [window.screen.width]);
+  // useEffect(() => {
+  //   setWidth(window.screen.width);
+  // }, [window.screen.width]);
 
-  useEffect(() => {
-    console.log(width);
-  }, [width]);
+  // useEffect(() => {
+  //   console.log(width);
+  // }, [width]);
 
   const options = {
     renderNode: {

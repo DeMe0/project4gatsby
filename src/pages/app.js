@@ -4,6 +4,7 @@ import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import LogoHeader from "../components/LogoHeader/LogoHeader";
 import CarouselContainer from "../components/Carousel/Carousel";
+import Reviews from "../components/Reviews/Reviews";
 import { graphql } from "gatsby";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
@@ -51,6 +52,7 @@ export default function App(props) {
       <LogoHeader />
       <CarouselContainer {...props} />
       <About output={output} />
+      <Reviews {...props} />
       <Contact />
       <Footer />
     </PortfolioProvider>
@@ -79,6 +81,16 @@ export const query = graphql`
           image {
             description
           }
+        }
+      }
+    }
+    allContentfulReviews {
+      edges {
+        node {
+          reviews {
+            raw
+          }
+          contentful_id
         }
       }
     }
