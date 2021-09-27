@@ -50,7 +50,7 @@ export default function App(props) {
   return (
     <PortfolioProvider>
       <LogoHeader />
-      <CarouselContainer {...props} />
+      {/* <CarouselContainer {...props} /> */}
       <About output={output} />
       <Reviews {...props} />
       <Contact />
