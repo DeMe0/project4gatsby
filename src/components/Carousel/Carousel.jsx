@@ -13,16 +13,6 @@ import "../../styles/carousel.sass";
 const CarouselContainer = (props) => {
   console.log("props =", props);
 
-  // const [width, setWidth] = useState(window.screen.width);
-
-  // useEffect(() => {
-  //   setWidth(window.screen.width);
-  // }, [window.screen.width]);
-
-  // useEffect(() => {
-  //   console.log(width);
-  // }, [width]);
-
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -32,16 +22,6 @@ const CarouselContainer = (props) => {
     },
   };
 
-  // const image = props.data.allContentfulAsset.edges[0].node.title;
-  // const images = props.data.allContentfulAsset.edges;
-
-  // const output = [];
-  // images.forEach((image) => {
-  //   const imageData = renderNode(image.node.content, options);
-  //   imageData.forEach((element) => {
-  //     output.push(element);
-  //   });
-  // });
   return (
     <div className="carouselContainer">
       <div
