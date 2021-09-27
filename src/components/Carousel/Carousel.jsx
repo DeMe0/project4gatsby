@@ -8,19 +8,9 @@ import { Carousel } from "bootstrap";
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import { renderRichText, renderNode } from "gatsby-source-contentful/rich-text";
 import "../../styles/carousel.sass";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 const CarouselContainer = (props) => {
   console.log("props =", props);
-
-  const options = {
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(node);
-        return <></>;
-      },
-    },
-  };
 
   return (
     <div className="carouselContainer">
