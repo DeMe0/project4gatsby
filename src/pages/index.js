@@ -1,7 +1,5 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import App from "../components/App";
-
 // styles
 
 // markup
@@ -14,7 +12,6 @@ const IndexPage = () => {
         <html lang={"en"} />
         <meta name="description" />
       </Helmet>
-      <App />
     </>
   );
 };
