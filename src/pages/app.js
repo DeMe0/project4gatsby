@@ -3,7 +3,7 @@ import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import LogoHeader from "../components/LogoHeader/LogoHeader";
-import CarouselContainer from "../components/Carousel/Carousel";
+// import CarouselContainer from "../components/Carousel/Carousel";
 import Reviews from "../components/Reviews/Reviews";
 import ServicesList from "../components/ServicesList/Services";
 import { graphql } from "gatsby";
@@ -51,7 +51,7 @@ export default function App(props) {
   return (
     <PortfolioProvider>
       <LogoHeader />
-      <CarouselContainer {...props} />
+      {/* <CarouselContainer {...props} /> */}
       <About {...props} />
       <ServicesList {...props} />
       <Reviews {...props} />
