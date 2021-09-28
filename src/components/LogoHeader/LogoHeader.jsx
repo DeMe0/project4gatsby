@@ -53,7 +53,7 @@ const MenuLinks = styled.nav`
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  height: 120px;
   background: #d7d7d7;
   position: absolute;
   top: 0;
@@ -64,10 +64,25 @@ const MenuLinks = styled.nav`
 
   ul {
     list-style-type: none;
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin-left: -20%;
   }
 
   li {
     margin-top: 1rem;
+  }
+  .link {
+    border: 1px black solid;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 6px;
+  }
+
+  .link a {
+    font-size: 0.8em;
+    cursor: pointer;
   }
 
   a {
@@ -75,6 +90,7 @@ const MenuLinks = styled.nav`
     color: black;
     font-size: 1.5rem;
     transition: color 300ms;
+    cursor: pointer;
 
     :hover {
       color: #6ab4ff;
@@ -100,29 +116,32 @@ const LogoHeader = () => {
       <MenuLinks nav={nav}>
         <ul>
           <li>
-            <a href="#logoNavBar">
-              <div class="link">Home</div>
-            </a>
+            <div class="link">
+              {" "}
+              <a href="#logoNavBar">Home</a>
+            </div>
           </li>
           <li>
-            <a href="#about">
-              <div class="link">About</div>
-            </a>
+            <div class="link">
+              {" "}
+              <a href="#about">About</a>
+            </div>
           </li>
           <li>
-            <a href="#services">
-              <div class="link">Services</div>
-            </a>
+            <div class="link">
+              <a href="#services">Services</a>
+            </div>
           </li>
           <li>
-            <a href="#reviews">
-              <div class="link">Reviews</div>
-            </a>
+            <div class="link">
+              {" "}
+              <a href="#reviews">Reviews</a>
+            </div>
           </li>
           <li>
-            <a href="#contact">
-              <div class="link">Contact Me</div>
-            </a>
+            <div class="link">
+              <a href="#contact">Contact Me</a>
+            </div>
           </li>
         </ul>
       </MenuLinks>

@@ -1,12 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Container } from "react-bootstrap";
-import { Link } from "react-scroll";
-import { graphql } from "gatsby";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import Img from "gatsby-image";
-import { Carousel } from "bootstrap";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
-import { renderRichText, renderNode } from "gatsby-source-contentful/rich-text";
 import "../../styles/carousel.sass";
 
 const CarouselContainer = (props) => {

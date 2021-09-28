@@ -1,9 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import Fade from "react-reveal/Fade";
-import { Container, Row, Col } from "react-bootstrap";
-import PortfolioContext from "../../context/context";
-import { graphql } from "gatsby";
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import "../../styles/about.sass";
 

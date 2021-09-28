@@ -3,7 +3,7 @@ import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 import LogoHeader from "../components/LogoHeader/LogoHeader";
-// import CarouselContainer from "../components/Carousel/Carousel";
+import CarouselContainer from "../components/Carousel/Carousel";
 import Reviews from "../components/Reviews/Reviews";
 import ServicesList from "../components/ServicesList/Services";
 import { graphql } from "gatsby";
@@ -25,20 +25,7 @@ export default function App(props) {
     },
   };
 
-  const service = props.data.allContentfulServices.edges[0].node.content;
   const services = props.data.allContentfulServices.edges;
-
-  const image =
-    props.data.allContentfulCarouselImages.edges[0].node.image[0].description;
-  const images = props.data.allContentfulCarouselImages.edges;
-
-  // const imageOutput = [];
-  // images.forEach((image) => {
-  //   const imageData = render(image.node.image[0].description);
-  //   imageData.forEach((element) => {
-  //     imageOutput.push(element);
-  //   });
-  // });
 
   const output = [];
   services.forEach((service) => {
@@ -51,7 +38,7 @@ export default function App(props) {
   return (
     <PortfolioProvider>
       <LogoHeader />
-      {/* <CarouselContainer {...props} /> */}
+      <CarouselContainer {...props} />
       <About {...props} />
       <ServicesList {...props} />
       <Reviews {...props} />
