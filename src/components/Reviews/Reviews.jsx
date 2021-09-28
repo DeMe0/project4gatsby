@@ -16,7 +16,7 @@ const Reviews = (props) => {
     });
   });
   return (
-    <div className="reviews">
+    <div className="reviews" id="reviews">
       <h2>Customer Reviews</h2>
       {reviewsOutput}
     </div>

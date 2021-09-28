@@ -16,7 +16,7 @@ const ServicesList = (props) => {
     });
   });
   return (
-    <div className="services">
+    <div className="services" id="services">
       <h2>Services Offered</h2>
       <div className="lists">{servicesOutput}</div>
     </div>

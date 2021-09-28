@@ -13,7 +13,7 @@ function ContactForm() {
 }
 const Contact = () => {
   return (
-    <section id="contact">
+    <section className="contact" id="contact">
       <h2>Contact Us!</h2>
       <Container>
         <form action="https://formspree.io/f/mayavvyv" method="POST">
