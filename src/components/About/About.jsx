@@ -4,10 +4,21 @@ import { Container, Row, Col } from "react-bootstrap";
 import PortfolioContext from "../../context/context";
 import { graphql } from "gatsby";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import "../../styles/about.sass";
 
 const About = (props) => {
-  console.log("props.output =", props.output);
-  return <div className="propClass">{props.output}</div>;
+  const abouts = props.data.allContentfulAbout.edges;
+
+  const aboutOutput = [];
+  abouts.forEach((about) => {
+    console.log("about -", about);
+    const aboutData = renderRichText(about.node.about);
+    aboutData.forEach((element) => {
+      aboutOutput.push(element);
+    });
+  });
+  return <div className="about">{aboutOutput}</div>;
 };
 
 export default About;

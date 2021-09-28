@@ -21,6 +21,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
+    "@trendyol-js/react-carousel": "^2.0.0",
     "babel-plugin-styled-components": "^1.13.2",
     "bootstrap": "^5.1.1",
     "gatsby": "^3.13.0",
