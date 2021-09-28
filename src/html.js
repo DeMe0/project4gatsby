@@ -18,6 +18,10 @@ export default function HTML(props) {
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous"
         ></link>
+        <style>
+          @import
+          url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+        </style>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

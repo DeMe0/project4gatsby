@@ -100,22 +100,27 @@ const LogoHeader = () => {
       <MenuLinks nav={nav}>
         <ul>
           <li>
-            <a href="#">
+            <a href=".logoNavBar">
               <div class="link">Home</div>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href=".about">
+              <div class="link">About</div>
+            </a>
+          </li>
+          <li>
+            <a href=".services">
               <div class="link">Services</div>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href=".reviews">
               <div class="link">Reviews</div>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="#contact">
               <div class="link">Contact Me</div>
             </a>
           </li>

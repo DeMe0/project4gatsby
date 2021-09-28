@@ -79,6 +79,7 @@ const CarouselContainer = (props) => {
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <h5>"Father & Son Get The Job Done!"</h5>
     </div>
   );
 };
